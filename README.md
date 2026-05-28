@@ -26,15 +26,25 @@
 
 ## 功能特性
 
-| 能力 | 说明 |
-|------|------|
-| 项目扫描 | 按优先级读文档 / 代码；`.docx` / `.pptx` 先转 Markdown 再扫（见 `prompts/project_scan.md`） |
-| 专利点 | 候选点讨论与融合（`patent_points_analyzer.md`） |
-| 查新 | **优先** [国家知识产权局 · 中国专利公布公告](http://epub.cnipa.gov.cn/)：使用 `tools/cnipa_epub_search.py`精准爬取；异常或无果时降级 **WebSearch**（如 Google 学术 / Patents）。著录与外链写入第一章（`prior_art_search.md`） |
-| 交底书成稿 | 脱敏模版 + **mermaid** 系统框图与流程图；`mermaid_render.py` → PNG，默认再出 **.docx** |
-| 交付命名 | 凡落盘交付：**`{案件名}_{YYYYMMDDHHmmss}.md`** 与同名 **.docx**（`disclosure_builder.md` §7.3） |
-| 自检 | 逻辑闭环、公式与参数一致（`disclosure_self_check.md`，不写入正文） |
-| 迭代 | **合并** / **纠正** 另存新文件；**`交底书修订对话记录.md`** 逐条追加（`iteration_context.md`、`iteration_dialog_log.py`） |
+<!-- 使用 HTML 表格：GitHub 上 Markdown 管道表会因右侧长路径/URL 把左列挤窄导致中文换行 -->
+<table>
+<colgroup>
+<col width="1%">
+<col>
+</colgroup>
+<thead>
+<tr><th align="left" nowrap width="1%">能力</th><th align="left">说明</th></tr>
+</thead>
+<tbody>
+<tr><td nowrap width="1%"><strong>项目扫描</strong></td><td>按优先级读文档 / 代码；<code>.docx</code> / <code>.pptx</code> 先转 Markdown 再扫（见 <code>prompts/project_scan.md</code>）</td></tr>
+<tr><td nowrap width="1%"><strong>专利点</strong></td><td>候选点讨论与融合（<code>patent_points_analyzer.md</code>）</td></tr>
+<tr><td nowrap width="1%"><strong>查新</strong></td><td><strong>优先</strong> <a href="http://epub.cnipa.gov.cn/">国知局 · 中国专利公布公告</a>（<code>tools/cnipa_epub_search.py</code>）；异常或无果时降级 WebSearch（Google 学术 / Patents）。著录与外链写入第一章（<code>prior_art_search.md</code>）</td></tr>
+<tr><td nowrap width="1%"><strong>交底书成稿</strong></td><td>脱敏模版 + <strong>mermaid</strong> 系统框图与流程图；<code>mermaid_render.py</code> → PNG，默认再出 <strong>.docx</strong></td></tr>
+<tr><td nowrap width="1%"><strong>交付命名</strong></td><td>凡落盘交付：<code>{案件名}_{YYYYMMDDHHmmss}.md</code> 与同名 <code>.docx</code>（<code>disclosure_builder.md</code> §7.3）</td></tr>
+<tr><td nowrap width="1%"><strong>自检</strong></td><td>逻辑闭环、公式与参数一致（<code>disclosure_self_check.md</code>，不写入正文）</td></tr>
+<tr><td nowrap width="1%"><strong>迭代</strong></td><td><strong>合并</strong> / <strong>纠正</strong> 另存新文件；<code>交底书修订对话记录.md</code> 逐条追加（<code>iteration_context.md</code>、<code>iteration_dialog_log.py</code>）</td></tr>
+</tbody>
+</table>
 
 **Office 抽取**：`.docx` / `.pptx` 先用本仓库 `docx_to_md.py` / `pptx_to_md.py` 转为 Markdown 再扫描（见 `SKILL.md`）。
 
